@@ -1,0 +1,9 @@
+#loading, #results {
+    display: none;
+}
+
+body {
+width: 100vw;
+height: 100vh;
+background: radial-gradient(#384256, #453856);
+}

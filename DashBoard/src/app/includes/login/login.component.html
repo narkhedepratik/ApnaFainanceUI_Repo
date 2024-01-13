@@ -1,0 +1,46 @@
+
+
+
+  <div class="container1">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="form">
+  
+
+    <div class="login_form_wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 col-md-offset-2">
+           
+						<!-- login_wrapper -->
+						<div class="login_wrapper">
+              <h3 class="text-danger text-center text-decoration-underline">Login to Loans Portal</h3><br>
+							<div class="formsix-pos">
+								<div class="form-group i-email">
+                  <input type="text" class="form-control" formControlName="username" placeholder="Enter Username">
+								</div>
+							</div>
+							<div class="formsix-e">
+								<div class="form-group i-password">
+									<input type="text" class="form-control" formControlName="password" placeholder="Enter Password">
+								</div>
+							</div>
+							<div class="login_remember_box">
+								<label class="control control--checkbox">Remember me
+									<input type="checkbox">
+									<span class="control__indicator"></span>
+								</label>
+								<a href="#" class="forget_password">
+									Forgot Password
+								</a>
+							</div>
+							<div class="text-center login_btn_wrapper">
+								<button class="btn btn-primary login_btn" type="submit"> Login </button>
+							</div>
+							
+						</div>
+						<!-- /.login_wrapper-->
+					</div>
+				</div>
+			</div>
+		</div>
+		</form>
+		</div>

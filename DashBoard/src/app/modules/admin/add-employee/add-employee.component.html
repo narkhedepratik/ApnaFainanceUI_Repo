@@ -1,0 +1,51 @@
+
+
+
+<div class="container1">
+    <form [formGroup]="registrationForm" (ngSubmit)="onRegistration()" class="form">
+  
+
+    <div class="login_form_wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 col-md-offset-2">
+           
+						<!-- login_wrapper -->
+						<div class="login_wrapper">
+              <h3 class="text-danger text-center text-decoration-underline">Employee Registration Form</h3><br>
+							<div class="formsix-pos">
+								<div class="form-group i-fname">
+                                 	<input type="text" class="form-control" formControlName="employeeName" placeholder="Enter Employee Name">
+								</div>
+							</div>
+							<div class="formsix-e">
+								<div class="form-group i-lname">
+									<input type="text" class="form-control" formControlName="employeeEmail" placeholder="Enter Email">
+								</div>
+							</div>
+                            
+                            <div class="formsix-e">
+								<div class="form-group i-age">
+									<input type="text" class="form-control" formControlName="employeeProfile" placeholder="Enter Employee Profile">
+								</div>
+							</div>
+							<div class="formsix-e">
+								<div class="form-group i-email">
+                                 	<input type="email" class="form-control" formControlName="password" placeholder="password">
+								</div>
+							</div>
+                            
+							
+							<div class="text-center login_btn_wrapper">
+								<button class="btn btn-primary login_btn" type="submit"> Submit</button>
+							</div>
+							
+						</div>
+						<!-- /.login_wrapper-->
+					</div>
+				</div>
+			</div>
+		</div>
+		</form>
+		</div>
+

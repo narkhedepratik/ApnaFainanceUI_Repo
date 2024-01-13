@@ -1,0 +1,10 @@
+<div class="ps-3">
+   
+    <h1 class="text-light ">{{role}}</h1>
+  
+    <div *ngFor="let menu of menus[0][role]">
+        <button class="btn btn-warning mt-3" [routerLink]="[role, menu.path]">{{menu.label}}</button>
+
+    </div>
+  
+</div>
