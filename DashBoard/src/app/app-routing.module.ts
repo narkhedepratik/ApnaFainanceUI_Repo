@@ -8,6 +8,7 @@ import { AppLayoutComponent } from './includes/app-layout/app-layout.component';
 import { EmiCalculatorComponent } from './includes/emi-calculator/emi-calculator.component';
 import { EligibilityComponent } from './templates/eligibility/eligibility.component';
 import { EnquireComponent } from './includes/enquire/enquire.component';
+import { ViewEnquiryComponent } from './includes/view-enquiry/view-enquiry.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
     {path:'contact' ,component:ContactComponent},
     {path:'login',component:LoginComponent},
     {path:'enquire',component:EnquireComponent},
+    {path:'view-enquire',component:ViewEnquiryComponent},
     {path:'eligibility',component:EligibilityComponent},
     {path:'emicalculator',component:EmiCalculatorComponent}
   ]

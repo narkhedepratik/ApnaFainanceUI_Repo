@@ -147,4 +147,8 @@ p {
     border-color: #2c6ad4;
 }
 
+.errormsg{
+    color: red;
+    margin-top: 5px;
+}
 

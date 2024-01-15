@@ -9,13 +9,19 @@
             <th>Employee Email</th>
             <th>Employee Profile</th>
             <th>password</th>
+            <th scope="col" colspan="2">Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr> 
+        <tr *ngFor="let e of employee"> 
+            <td>{{e.employeeId}}</td>
+            <td>{{e.employeeName}}</td>
+            <td>{{e.employeeEmail}}</td>
+            <td>{{e.employeeProfile}}</td>
+            <td>{{e.password}}</td> 
             <td>
-            <button class="btn btn-primary" >EDIT</button>
-            <button class="btn btn-danger" >DELETE</button>
+                 <button class="btn btn-primary"(click)="onEdit(e)" >EDIT</button>
+                 <button class="btn btn-danger" (click)="onDelete(e.employeeId)"> Delete</button>
             </td>
         </tr>
     </tbody>

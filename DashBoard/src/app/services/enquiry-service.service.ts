@@ -12,4 +12,9 @@ export class EnquiryServiceService {
    {
     return this.http.post('http://localhost:9090/enquiry/create_enquiry',enquiry)
    }
+
+   getEnquiryDetails()
+   {
+      return this.http.get('http://localhost:9090/enquiry/enquiries');
+   }
 }
