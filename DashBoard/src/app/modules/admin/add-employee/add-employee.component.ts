@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
+import { EmployeeServiceService } from '../../../services/employee-service.service';
+
 
 @Component({
   selector: 'app-add-employee',
@@ -7,7 +9,7 @@ import { FormBuilder,FormGroup } from '@angular/forms';
   styleUrl: './add-employee.component.css'
 })
 export class AddEmployeeComponent implements OnInit{
-  constructor(private fb:FormBuilder){}
+  constructor(private fb:FormBuilder, private employeeService:EmployeeServiceService){}
   registrationForm:FormGroup;
   
   ngOnInit(): void {
@@ -16,18 +18,15 @@ export class AddEmployeeComponent implements OnInit{
         employeeName:[],
         employeeEmail:[],
         employeeProfile:[],
-        password:[],
-        
-        
+       /* password:[]*/
       }
     )
   }
 
   onRegistration(){
 
-    
+    this.employeeService.saveEmployee(this.registrationForm.value).subscribe();
+    alert("Employee Registered..!")
   
-  alert("Employee Registered..!")
-    
   }
 }

@@ -1,3 +1,4 @@
+
 .custom-height {
   max-height: 300px; 
 }
@@ -45,4 +46,9 @@
   }
   .slider .btn:hover {
     background-color:#dc404d;
+  }
+  .card{
+    padding: 10px;
+    margin-bottom:  10px;
+    margin-left: 10px;
   }
