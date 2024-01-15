@@ -1,6 +1,3 @@
-
-
-
 <div class="container1">
     <form [formGroup]="enquiryForm" (ngSubmit)="onEnquiry()" class="form">
   
@@ -14,37 +11,100 @@
 						<div class="login_wrapper">
               <h3 class="text-danger text-center text-decoration-underline">Enquiry Form</h3><br>
 							<div class="formsix-pos">
-								<div class="form-group i-fname">
-                                 	<input type="text" class="form-control" formControlName="firstName" placeholder="Enter First Name">
+								<div class="errormsg" *ngIf="enquiryForm.controls['firstName'].touched && enquiryForm.controls['firstName'].invalid">
+									<span *ngIf="enquiryForm.controls['firstName'].hasError('required')">
+									   *First name is required.
+									</span>
+									<span *ngIf="enquiryForm.controls['firstName'].hasError('minlength')">
+										 *The first name must have at least 2 character.
+									 </span>
 								</div>
+								<div class="form-group i-fname">
+									<input type="text" class="form-control" formControlName="firstName" placeholder="Enter First Name">
+							   </div>   
 							</div>
+							
 							<div class="formsix-e">
+								<div class="errormsg" *ngIf="enquiryForm.controls['lastName'].touched && enquiryForm.controls['lastName'].invalid">
+									<span *ngIf="enquiryForm.controls['lastName'].hasError('required')">
+										*Last name is required.
+									</span>
+									<span *ngIf="enquiryForm.controls['lastName'].hasError('minlength')">
+										*The last name must have at least 2 character.
+									 </span>
+								</div>
 								<div class="form-group i-lname">
 									<input type="text" class="form-control" formControlName="lastName" placeholder="Enter Last Name">
-								</div>
+								</div>	
 							</div>
+
                             <div class="formsix-e">
+								<div class="errormsg" *ngIf="enquiryForm.controls['age'].touched && enquiryForm.controls['age'].invalid">
+									<span *ngIf="enquiryForm.controls['age'].hasError('required')">
+										*Age is required.
+									</span>
+									<span *ngIf="enquiryForm.controls['age'].hasError('min')">
+										*Age must be 21 or above.
+									</span>
+									<span *ngIf="enquiryForm.controls['age'].hasError('max')">
+										*Age must be 55 or below.
+									</span>
+								</div>
 								<div class="form-group i-age">
 									<input type="text" class="form-control" formControlName="age" placeholder="Enter Age">
 								</div>
 							</div>
+
 							<div class="formsix-e">
+								<div class="errormsg" *ngIf="enquiryForm.controls['emailId'].touched && enquiryForm.controls['emailId'].invalid">
+									<span *ngIf="enquiryForm.controls['emailId'].hasError('required')">
+										*Email id is required.
+									</span>
+									<span *ngIf="enquiryForm.controls['emailId'].hasError('email')">
+										*Invalid email format.
+									 </span>
+								</div>
 								<div class="form-group i-email">
-                                 	<input type="email" class="form-control" formControlName="email" placeholder="Enter Email Id">
+                                 	<input type="emailId" class="form-control" formControlName="emailId" placeholder="Enter Email Id">
 								</div>
 							</div>
+
                             <div class="formsix-e">
+								<div class="errormsg" *ngIf="enquiryForm.controls['mobileNo'].touched && enquiryForm.controls['mobileNo'].invalid">
+									<span *ngIf="enquiryForm.controls['mobileNo'].hasError('required')">
+										*Mobile number is required.
+									</span>
+									<span *ngIf="enquiryForm.controls['mobileNo'].hasError('minlength')">
+										*Number should be 10 digits.
+									 </span>
+									 <span *ngIf="enquiryForm.controls['mobileNo'].hasError('maxlength')">
+										*Number should be 10 digits.
+									 </span>
+								</div>
 								<div class="form-group i-mobno">
 									<input type="text" class="form-control" formControlName="mobileNo" placeholder="Enter Mobile Number">
 								</div>
 							</div>
+
 							<div class="formsix-e">
+								<div class="errormsg" *ngIf="enquiryForm.controls['pancardNo'].touched && enquiryForm.controls['pancardNo'].invalid">
+									<span *ngIf="enquiryForm.controls['pancardNo'].hasError('required')">
+										*Pancard number is required.
+									</span>
+									<span *ngIf="enquiryForm.controls['pancardNo'].hasError('pattern')">
+										*Invalid pancard number.
+									 </span>
+								</div>
 								<div class="form-group i-pancard">
 									<input type="text" class="form-control" formControlName="pancardNo" placeholder="Enter pan No">
 								</div>
 							</div>
-							
-                            <!-- <div class="formsix-e">
+							<!-- <div class="formsix-e">
+								<div class="form-group i-cpassword">
+									<input type="text" class="form-control" formControlName="cpassword" placeholder="Confirm password">
+								</div>
+							</div> -->
+                          <!--   <div class="formsix-e">
 								<div class="form-group i-cscore">
 									<input type="text" class="form-control" formControlName="cibilScore" placeholder="Enter Cibil Score">
 								</div>

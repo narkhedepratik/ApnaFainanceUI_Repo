@@ -10,6 +10,7 @@ const routes: Routes = [
   {path:'add_emp' , component:AddEmployeeComponent},
   {path:'view_emps' , component:ViewemployeeComponent},
   {path:'view_defaulter' , component:ViewdefaultersComponent},
+  {path:'edit/:data',component:AddEmployeeComponent}
 ];
 
 @NgModule({
