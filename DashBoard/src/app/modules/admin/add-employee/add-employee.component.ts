@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
+
 import { EmployeeService } from '../../../services/employee.service';
 import { ActivatedRoute } from '@angular/router';
 import { Employee } from '../../../model/employee';
+
 
 @Component({
   selector: 'app-add-employee',
@@ -10,7 +12,9 @@ import { Employee } from '../../../model/employee';
   styleUrl: './add-employee.component.css'
 })
 export class AddEmployeeComponent implements OnInit{
+
   constructor(private fb:FormBuilder,private employeeService:EmployeeService,private activeRouter:ActivatedRoute){}
+
   registrationForm:FormGroup;
   
   ngOnInit(): void {
@@ -20,11 +24,14 @@ export class AddEmployeeComponent implements OnInit{
         employeeName:[],
         employeeEmail:[],
         employeeProfile:[],
+
       //  password:[],   
+
       }
     );
     this.patchEditValue()
   }
+
 
 
   onRegistration()
@@ -51,6 +58,7 @@ export class AddEmployeeComponent implements OnInit{
         let editdetails:Employee = JSON.parse(prodJson);
         this.registrationForm.patchValue(editdetails);
       })
+
   }
 }
 

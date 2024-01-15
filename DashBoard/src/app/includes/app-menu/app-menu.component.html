@@ -3,7 +3,7 @@
     <h1 class="text-light ">{{role}}</h1>
   
     <div *ngFor="let menu of menus[0][role]">
-        <button class="btn btn-warning mt-3" [routerLink]="[role, menu.path]">{{menu.label}}</button>
+        <button class="btn btn-danger text-white mt-3" style="font-size: large; background-color: #FF004D;border-radius: 20px" [routerLink]="[role, menu.path]">{{menu.label}}</button>
 
     </div>
   
