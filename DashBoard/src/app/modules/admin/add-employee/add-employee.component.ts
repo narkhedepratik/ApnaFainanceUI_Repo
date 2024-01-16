@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
 
+
 @Component({
   selector: 'app-add-employee',
   templateUrl: './add-employee.component.html',
@@ -16,7 +17,7 @@ export class AddEmployeeComponent implements OnInit{
         employeeName:[],
         employeeEmail:[],
         employeeProfile:[],
-        password:[],
+        /* password:[], */
         
         
       }

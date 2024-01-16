@@ -12,6 +12,7 @@ export class EnquireComponent implements OnInit{
   constructor(private fb:FormBuilder,public enquiryservice:EnquiryServiceService,private router:Router){}
  
   enquiryForm:FormGroup;
+  cibilForm:FormGroup;
   
   ngOnInit(): void {
     this.enquiryForm=this.fb.group(
@@ -22,18 +23,30 @@ export class EnquireComponent implements OnInit{
         email:[],
         mobileNo:[],
         pancardNo:[],
-        /* cibilScore:[],
+
+      
+
+        cibil:this.fb.group(
+          {
+        
+        cibilScore:[],
         cibilScoreDateTime:[],
-        status:[] */
+        status:[]
         
       }
     )
+  }
+  )
   }
 
   onEnquiry(){
 
     
   this.enquiryservice.saveEnquiryDetails(this.enquiryForm.value).subscribe();
+  
+  console.log(this.enquiryForm.value); 
+  console.log(this.cibilForm.value);
+
   alert("product Register..!")
     
   }
