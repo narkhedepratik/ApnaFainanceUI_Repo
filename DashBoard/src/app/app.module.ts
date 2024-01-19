@@ -19,6 +19,8 @@ import { FooterComponent } from './templates/footer/footer.component';
 import { EligibilityComponent } from './templates/eligibility/eligibility.component';
 import { EnquireComponent } from './includes/enquire/enquire.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewEnquiryComponent } from './includes/view-enquiry/view-enquiry.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppHeaderComponent,
     FooterComponent,
     EligibilityComponent,
-    EnquireComponent
+    EnquireComponent,
+    ViewEnquiryComponent,
+    
   ],
   imports: [
     BrowserModule,

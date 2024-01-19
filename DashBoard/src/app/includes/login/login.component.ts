@@ -2,6 +2,8 @@ import { Component ,OnInit} from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
+import { Employee } from '../../model/employee';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,8 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit{
-  constructor(private fb:FormBuilder,private router:Router){}
+  constructor(private fb:FormBuilder,private router:Router,
+            private loginService:LoginService){}
  
   loginForm:FormGroup;
 
@@ -27,12 +30,17 @@ export class LoginComponent implements OnInit{
     let un:string=this.loginForm.controls['username'].value;
     let ps:string=this.loginForm.controls['password'].value;
     
-    if(un=='admin123' && ps=='admin@123')
+      this.loginService.authenticateUser(un,ps).subscribe(
+        (employee:Employee)=>{
+          console.log(employee);
+    
+    if(employee!=null)
+    if(employee.employeeProfile=='ADMIN')
     {
           sessionStorage.setItem('role','admin')
           this.router.navigateByUrl('/apnafinance/admin');   
     }
-    else if(un=='re123' && ps=='re@123')
+    else if(employee.employeeProfile=='CRM')
     {
            sessionStorage.setItem('role','re')
 
@@ -41,6 +49,9 @@ export class LoginComponent implements OnInit{
     else{
       alert('Enter valid username or password..!')
     }
+  }
+  )
+
   }
 }
 

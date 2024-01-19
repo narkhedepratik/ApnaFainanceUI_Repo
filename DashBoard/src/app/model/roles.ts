@@ -15,7 +15,7 @@ export class Roles {
                 {label:'Add Enquiry', path:'add_enquiry'},
                 {label:'View Enquiry', path:'view_enquiry'},
                 
-            ]     
+            ]  
 
 
 

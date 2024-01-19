@@ -1,21 +1,25 @@
-
-
-
  <table class="table table-hover">
     <thead class="thead-dark">
         <tr>
-            <th>Id</th>
-            <th>Employee Name</th>
-            <th>Employee Email</th>
-            <th>Employee Profile</th>
-            <th>password</th>
+
+            <th scope="col">Id</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Employee Email</th>
+            <th scope="col">Employee Profile</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr> 
+        <tr *ngFor="let e of employees"> 
+            <th scope="row">{{e.employeeId}}</th>
+            <td>{{e.employeeName}}</td>
+            <td>{{e.employeeEmail}}</td>
+            <td>{{e.employeeProfile}}</td>
+
             <td>
-            <button class="btn btn-primary" >EDIT</button>
-            <button class="btn btn-danger" >DELETE</button>
+            <button class="btn btn-danger m-2 p-0 text-center" style="font-size:small; background-color: #FF004D;border-radius: 10px;" >EDIT</button>
+            <button class="btn btn-danger m-2 p-0 text-center"  style="font-size: small; background-color: #FF004D;border-radius: 10px;">DELETE</button>
+
             </td>
         </tr>
     </tbody>

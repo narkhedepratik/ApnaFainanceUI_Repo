@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ReRoutingModule } from './re-routing.module';
 import { AddEnquiryComponent } from './add-enquiry/add-enquiry.component';
 import { ViewEnquiryComponent } from './view-enquiry/view-enquiry.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { ViewEnquiryComponent } from './view-enquiry/view-enquiry.component';
   ],
   imports: [
     CommonModule,
-    ReRoutingModule
+    ReRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class ReModule { }

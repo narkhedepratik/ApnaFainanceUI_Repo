@@ -1,0 +1,40 @@
+
+<h1 class="text-center mb-5">
+    <i class="fa fa-table" aria-hidden="true"></i>View Enquiry...!
+</h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Customer ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Email Id</th>
+        <th scope="col">Mobile No.</th>
+        <th scope="col">Pancard No.</th>
+        <th scope="col">Cibil Id</th>
+        <th scope="col">Cibil Score</th>
+        <th scope="col">Cibil Score Date Time</th>
+        <th scope="col">Status</th>
+        
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let e of enquiry">
+        <th scope="row">{{e.customerID}}</th>
+        <td>{{e.firstName}}</td>
+        <td>{{e.lastName}}</td>
+        <td>{{e.age}}</td>
+        <td>{{e.email}}</td>
+        <td>{{e.mobileNo}}</td>
+        <td>{{e.pancardNo}}</td>
+        <td>{{e.cibil.cibilId}}</td>
+        <td>{{e.cibil.cibilScore}}</td>
+        <td>{{e.cibil.cibilScoreDateTime}}</td>
+        <td>{{e.cibil.status}}</td>
+        
+      </tr>
+     
+    </tbody>
+  </table>

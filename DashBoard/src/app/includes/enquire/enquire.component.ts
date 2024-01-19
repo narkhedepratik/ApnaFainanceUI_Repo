@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { FormBuilder ,FormGroup} from '@angular/forms';
+import { FormBuilder ,FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { EnquiryServiceService } from '../../services/enquiry-service.service';
 
@@ -17,37 +17,27 @@ export class EnquireComponent implements OnInit{
   ngOnInit(): void {
     this.enquiryForm=this.fb.group(
       {
-        firstName:[],
-        lastName:[],
-        age:[],
-        email:[],
-        mobileNo:[],
-        pancardNo:[],
 
-      
+       
+        firstName:['', [Validators.required, Validators.minLength(2)]],
+        lastName:['', [Validators.required, Validators.minLength(2)]],
+        age:['', [Validators.required, Validators.min(21), Validators.max(55)]],
+        emailId:['',[Validators.required,Validators.email]],
+        mobileNo:['', [Validators.required, Validators.minLength(10), Validators.maxLength(10),Validators.pattern('^[0-9]{10}$')]],
+        pancardNo: ['', [Validators.required, Validators.pattern('^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$')]],
+       
 
-        cibil:this.fb.group(
-          {
-        
-        cibilScore:[],
-        cibilScoreDateTime:[],
-        status:[]
-        
       }
     )
   }
-  )
-  }
+  
+  
+
 
   onEnquiry(){
 
-    
   this.enquiryservice.saveEnquiryDetails(this.enquiryForm.value).subscribe();
-  
-  console.log(this.enquiryForm.value); 
-  console.log(this.cibilForm.value);
-
-  alert("product Register..!")
+  alert("Form Submitted Successfully..!")
     
   }
 }

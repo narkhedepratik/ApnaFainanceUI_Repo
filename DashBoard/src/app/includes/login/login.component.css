@@ -1,5 +1,5 @@
 .login_form_wrapper {
-    float: left;
+    
     width: 100%;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -59,7 +59,7 @@
 }
 
 .login_wrapper .form-control {
-    height: 35px;
+    height: 30px;
     padding: 15px 20px;
     font-size: 14px;
     line-height: 24px;
@@ -147,4 +147,8 @@ p {
     border-color: #2c6ad4;
 }
 
+.errormsg{
+    color: red;
+    margin-top: 5px;
+}
 
