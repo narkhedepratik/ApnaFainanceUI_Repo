@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
-
+import { Employee } from '../../../model/employee';
 import { EmployeeService } from '../../../services/employee.service';
 import { ActivatedRoute } from '@angular/router';
-import { Employee } from '../../../model/employee';
 
 
 @Component({
@@ -24,8 +23,6 @@ export class AddEmployeeComponent implements OnInit{
         employeeName:[],
         employeeEmail:[],
         employeeProfile:[],
-
-      //  password:[],   
 
       }
     );

@@ -21,6 +21,8 @@ import { EnquireComponent } from './includes/enquire/enquire.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewEnquiryComponent } from './includes/view-enquiry/view-enquiry.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,9 @@ import { ViewEnquiryComponent } from './includes/view-enquiry/view-enquiry.compo
     FooterComponent,
     EligibilityComponent,
     EnquireComponent,
-    ViewEnquiryComponent
+
+    ViewEnquiryComponent,
+
   ],
   imports: [
     BrowserModule,
