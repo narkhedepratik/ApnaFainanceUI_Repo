@@ -12,12 +12,12 @@ import { CustomerserviceService } from '../../../services/customerservice.servic
 export class AddEnquiryComponent implements OnInit{
   constructor(private fb:FormBuilder,public customerService:CustomerserviceService,private router:Router){}
  
-  CustomerDocumentsDetails:FormGroup; 
+  CustomerDocuments:FormGroup; 
   customerDetails:FormGroup;
-  customerAddressDetails: FormGroup;
+  customerAddress: FormGroup;
   localAddress: FormGroup;
   permanentAddress: FormGroup;
-  medicalInfoDetails: FormGroup;
+  medicalInfo: FormGroup;
   accountDetails: FormGroup;
   selectphoto:any;
   selectpanCard:any;
@@ -45,14 +45,14 @@ export class AddEnquiryComponent implements OnInit{
     state:[],
     pincode:[]
    })
-    this.customerAddressDetails=this.fb.group(
+    this.customerAddress=this.fb.group(
       {
     customerAddressId:[],
     localAddress:this.localAddress,
     permanentAddress:this.permanentAddress
   }
   )
-    /* this.CustomerDocumentsDetails=this.fb.group(
+  /*   this.CustomerDocuments=this.fb.group(
       {
         documentId:[],
         panCard:[],
@@ -62,7 +62,7 @@ export class AddEnquiryComponent implements OnInit{
         
       }
       ) */
-      this.medicalInfoDetails=this.fb.group({
+      this.medicalInfo=this.fb.group({
         billId:[],
         patientId:[],
         billingDate:[],
@@ -79,18 +79,18 @@ export class AddEnquiryComponent implements OnInit{
        })
     this.customerDetails=this.fb.group(
       {
-        customerID:[],
+        customerId:[],
         customerName:[],
         customerDateOfBirth:[],
         customerAge:[],
         customerGender:[],
         customerEmail:[],
-        customerMobileNo:[],
-        loanApplicationJson:[],
-        CustomerDocumentsDetails:this.CustomerDocumentsDetails,
-        customerAddressDetails:this.customerAddressDetails,
-        medicalInfoDetails:this.medicalInfoDetails,
-        /* accountDetails:this.accountDetails */
+        customerMobileNumber:[],
+              //property <-- :    value          
+       /*  customerDocuments:this.CustomerDocuments, */
+        customerAddress:this.customerAddress,
+        medicalInfo:this.medicalInfo,
+        accountDetails:this.accountDetails 
        
         
        
@@ -125,8 +125,8 @@ export class AddEnquiryComponent implements OnInit{
     var jsondata=JSON.stringify(this.customerDetails.value);
     var fdata=new FormData();
     fdata.append("photo",this.selectphoto);
-    fdata.append("pancard",this.selectpanCard);
-    fdata.append("adharCard",this.selectadharCard);
+    fdata.append("panCard",this.selectpanCard);
+    fdata.append("aadharCard",this.selectadharCard);
     fdata.append("signature",this.selectsignature);
     fdata.append("loanApplicationJson",jsondata);
     this.customerService.saveCustomerDetails(fdata).subscribe();
