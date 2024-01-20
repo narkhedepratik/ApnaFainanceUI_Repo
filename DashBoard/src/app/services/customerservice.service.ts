@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Customer } from '../model/customer';
+
 import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
@@ -8,12 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CustomerserviceService {
 
+
   constructor(private http:HttpClient, activateRouter:ActivatedRoute) { }
 
   saveCustomerDetails(customer:any)
   {
    return this.http.post('http://localhost:9090/customer/create_customer',customer);
   }
+
   getCustomerDetails()
   {
     return this.http.get('http://localhost:9090/customer/getAllCustomer');
@@ -22,4 +25,5 @@ export class CustomerserviceService {
   {
     return this.http.get('http://localhost:9090/customer/Customer/'+customerId);
   }
+
 }

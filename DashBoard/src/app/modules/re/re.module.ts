@@ -6,13 +6,8 @@ import { AddEnquiryComponent } from './add-enquiry/add-enquiry.component';
 import { ViewEnquiryComponent } from './view-enquiry/view-enquiry.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
 import { ViewCustomerComponent } from './view-customer/view-customer.component';
-
-
-
-
-
-
 
 @NgModule({
   declarations: [

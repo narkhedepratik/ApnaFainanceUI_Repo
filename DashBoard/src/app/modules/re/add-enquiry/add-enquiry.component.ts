@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
+
 import { EnquiryServiceService } from '../../../services/enquiry-service.service';
 import { CibilSCore } from '../../../model/cibil-score';
 import { Enquiry } from '../../../model/enquiry';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+
+
 import { CustomerserviceService } from '../../../services/customerservice.service';
 
 @Component({
@@ -14,7 +17,6 @@ import { CustomerserviceService } from '../../../services/customerservice.servic
 })
 export class AddEnquiryComponent implements OnInit{
 
- 
   constructor(private fb:FormBuilder,public customerService:CustomerserviceService,private router:Router){}
  
   CustomerDocuments:FormGroup; 
@@ -57,7 +59,7 @@ export class AddEnquiryComponent implements OnInit{
     permanentAddress:this.permanentAddress
   }
   )
- 
+
       this.medicalInfo=this.fb.group({
         billId:[],
         patientId:[],
@@ -82,7 +84,7 @@ export class AddEnquiryComponent implements OnInit{
         customerGender:[],
         customerEmail:[],
         customerMobileNumber:[],
-       
+
         customerAddress:this.customerAddress,
         medicalInfo:this.medicalInfo,
         accountDetails:this.accountDetails 
@@ -90,10 +92,10 @@ export class AddEnquiryComponent implements OnInit{
         
 
 
+
       }
     );
   }
-
   onSelectpanCard(event:any)
   {
     this.selectpanCard=event.target.files[0];
@@ -158,5 +160,7 @@ export class AddEnquiryComponent implements OnInit{
   }
 }
 
-}
+  
 
+ 
+}
