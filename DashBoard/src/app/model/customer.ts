@@ -6,7 +6,7 @@ import { MedicalInfo } from "./medical-info";
 
 export class Customer {
     customerId:number;
-    customeName:string;
+    customerName:string;
     customerDateOfBirth:string;
     customerAge:number;
     customerGender:string;
@@ -16,5 +16,8 @@ export class Customer {
     customerDocuments:CustomerDocuments;
     customerAddress:CustomerAddress;
     accountDetails:AccountDetails;
+
     medicalInfo:MedicalInfo
+
+
 }

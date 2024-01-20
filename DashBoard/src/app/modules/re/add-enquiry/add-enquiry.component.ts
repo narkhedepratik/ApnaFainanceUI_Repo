@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+
+
+
+import { EnquiryServiceService } from '../../../services/enquiry-service.service';
+import { CibilSCore } from '../../../model/cibil-score';
+import { Enquiry } from '../../../model/enquiry';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-
 import { CustomerserviceService } from '../../../services/customerservice.service';
 
 @Component({
@@ -10,6 +15,9 @@ import { CustomerserviceService } from '../../../services/customerservice.servic
   styleUrl: './add-enquiry.component.css'
 })
 export class AddEnquiryComponent implements OnInit{
+
+ 
+
   constructor(private fb:FormBuilder,public customerService:CustomerserviceService,private router:Router){}
  
   CustomerDocuments:FormGroup; 
@@ -52,16 +60,7 @@ export class AddEnquiryComponent implements OnInit{
     permanentAddress:this.permanentAddress
   }
   )
-  /*   this.CustomerDocuments=this.fb.group(
-      {
-        documentId:[],
-        panCard:[],
-        adharCard:[],
-        photo:[],
-        signature:[]
-        
-      }
-      ) */
+
       this.medicalInfo=this.fb.group({
         billId:[],
         patientId:[],
@@ -86,14 +85,14 @@ export class AddEnquiryComponent implements OnInit{
         customerGender:[],
         customerEmail:[],
         customerMobileNumber:[],
-              //property <-- :    value          
-       /*  customerDocuments:this.CustomerDocuments, */
+
         customerAddress:this.customerAddress,
         medicalInfo:this.medicalInfo,
         accountDetails:this.accountDetails 
        
         
-       
+
+
 
       }
     );

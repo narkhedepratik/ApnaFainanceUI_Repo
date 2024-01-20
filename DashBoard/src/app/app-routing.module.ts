@@ -11,6 +11,8 @@ import { EnquireComponent } from './includes/enquire/enquire.component';
 import { ViewEnquiryComponent } from './includes/view-enquiry/view-enquiry.component';
 
 
+
+
 const routes: Routes = [
   {path:'',redirectTo:'home', pathMatch:'full'},
   {path:'home',component:HomeComponent, children:[
@@ -29,6 +31,7 @@ const routes: Routes = [
 
       {path:'admin', loadChildren:()=>import('./modules/admin/admin.module').then(m=>m.AdminModule)},
       {path:'re' ,loadChildren:()=>import('./modules/re/re.module').then(m=>m.ReModule)}
+     
 
     ]
   }

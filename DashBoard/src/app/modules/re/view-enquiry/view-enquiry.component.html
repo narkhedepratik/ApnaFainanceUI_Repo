@@ -1,1 +1,49 @@
 <p>view-enquiry works!</p>
+
+<h1 class="text-center mb-5">
+    <i class="fa fa-table" aria-hidden="true"></i>View Enquiry...!
+</h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Customer ID</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Age</th>
+        <th scope="col">Email Id</th>
+        <th scope="col">Mobile No.</th>
+       <th scope="col">ACTION</th>
+       
+        
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let e of data">
+        <th scope="row">{{e.customerId}}</th>
+        <td>{{e.customerName}}</td>
+        <td>{{e.customerDateOfBirth}}</td>
+        <td>{{e.customerAge}}</td>
+        <td>{{e.customerEmail}}</td>
+        <td>{{e.customerMobileNumber}}</td>
+        <!-- <td>{{e.}}</td>
+        <td>{{e.cibil.cibilId}}</td>
+        <td>{{e.cibil.cibilScore}}</td>
+        <td>{{e.cibil.cibilScoreDateTime}}</td>
+        <td>{{e.cibil.status}}</td>
+         -->
+         <td><button (click)="viewSingleData(e.customerId)">VIEW</button>
+          <td><button (click)="ViewCibilInfo()">CIBIL</button>
+        
+      </tr>
+     
+    </tbody>
+  </table>
+  
+
+
+
+
+
+
+  
