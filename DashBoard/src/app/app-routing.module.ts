@@ -9,7 +9,7 @@ import { EmiCalculatorComponent } from './includes/emi-calculator/emi-calculator
 import { EligibilityComponent } from './templates/eligibility/eligibility.component';
 import { EnquireComponent } from './includes/enquire/enquire.component';
 import { ViewEnquiryComponent } from './includes/view-enquiry/view-enquiry.component';
-import { LoanComponent } from './modules/re/loan/loan.component';
+
 
 
 
@@ -22,7 +22,6 @@ const routes: Routes = [
     {path:'login',component:LoginComponent},
     {path:'enquire',component:EnquireComponent},
     {path:'view-enquire',component:ViewEnquiryComponent},
-    {path:'loan',component:LoanComponent},
     {path:'eligibility',component:EligibilityComponent},
     {path:'emicalculator',component:EmiCalculatorComponent}
   ]
@@ -31,7 +30,7 @@ const routes: Routes = [
     path:'apnafinance' ,component:AppLayoutComponent, children:[
 
       {path:'admin', loadChildren:()=>import('./modules/admin/admin.module').then(m=>m.AdminModule)},
-      {path:'re' ,loadChildren:()=>import('./modules/re/re.module').then(m=>m.ReModule)},
+      {path:'re' ,loadChildren:()=>import('./modules/re/re.module').then(m=>m.ReModule)}
      
 
     ]

@@ -1,7 +1,7 @@
 export class Roles {
 
     public static userroles:Array<any>=[
-      // 0   
+      
         {
            admin:[
                     {label:'View Statistics', path:'statistics'},
@@ -15,18 +15,12 @@ export class Roles {
 
                 {label:'Add Enquiry', path:'add_enquiry'},
                 {label:'View Enquiry', path:'view_enquiry'},
-                {label:'loan',path:'loan'}
-               ]  ,
-              
-              
+            ]
 
-
-
-
-
-        }
-
+     
+          }
 
     ]
+  }
 
-}
+

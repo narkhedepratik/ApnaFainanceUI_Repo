@@ -1,23 +1,146 @@
-<button  (click)="onClick()">Check CIBIL</button>
 
-<table border="2">
-    <tr>
-        <th>Customer ID</th>
-        <th>firstName</th>
-        <th>lastName</th>
-        <th>age</th>
-       <th>email</th>
-        <th>mobileNo</th>
-       <th> pancardNo</th>
-      <th>Cibil Score</th>
-      <th>Cibil Score Date & Time</th>
-      <th>Status</th>
-    
-    <tr *ngFor="let e of enquiry">
-    
-     
-    
-    </tr>
 
-</table>
+<div class="container mt-1">
+  <form [formGroup]="customerDetails" (ngSubmit)="onSubmitCustomerDetails()" class="form">
+    <div class="card">
+      <div class="card-header">
+        <ul class="nav nav-pills">
+          <li class="nav-item" [ngClass]="{ 'active': currentStep === 1 }">
+            <a class="nav-link" (click)="setCurrentStep(1)">Step 1</a>
+          </li>
+          <li class="nav-item" [ngClass]="{ 'active': currentStep === 2 }">
+            <a class="nav-link" (click)="setCurrentStep(2)">Step 2</a>
+          </li>
+          <li class="nav-item" [ngClass]="{ 'active': currentStep === 3 }">
+            <a class="nav-link" (click)="setCurrentStep(3)">Step 3</a>
+          </li>
+          <li class="nav-item" [ngClass]="{ 'active': currentStep === 4 }">
+            <a class="nav-link" (click)="setCurrentStep(4)">Step 4</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <div *ngIf="currentStep === 1">
+          <!-- Step 1 content -->
+          <h4 class="text-primary text-center text-decoration-underline">Customer Details</h4>
+          <!-- Your form fields for step 1 go here -->
+          <input type="text" class="form-control" formControlName="customerName" placeholder="Enter Name">
+          <input type="text" class="form-control" formControlName="customerDateOfBirth" placeholder="Enter Date of Birth">
+          <input type="text" class="form-control" formControlName="customerAge" placeholder="Enter Age">
+          <input type="text" class="form-control" formControlName="customerGender" placeholder="Enter Gender">
+          <input type="emailId" class="form-control" formControlName="customerEmail" placeholder="Enter Email Id">
+          <input type="text" class="form-control" formControlName="customerMobileNumber" placeholder="Enter Mobile Number">
+          
+          <button class="btn btn-primary" (click)="nextStep()">Next</button>
+        </div>
+
+        <div formGroupName="customerAddress">
+        <div *ngIf="currentStep === 2">
+          
+          <!-- Your form fields for step 1 go here -->
+            <h4 class="text-primary text-center text-decoration-underline">Address Details</h4>
+            <div class="row">
+              <div class="col-6 text-center">
+          <div formGroupName="localAddress">
+            <br>
+            
+            <h5 class="text-primary"><small>Local Address</small></h5>
+              <!-- Step 2 content -->
+              <input type="text" class="form-control" formControlName="areaname" placeholder="Area Name">
+            <input type="text" class="form-control" formControlName="cityname" placeholder="CityName">
+            <input type="text" class="form-control" formControlName="district" placeholder="District">
+            <input type="text" class="form-control" formControlName="state" placeholder="State">
+            <input type="text" class="form-control" formControlName="pincode" placeholder="Pincode">
+            
+          </div>
+          </div>
+          
+          <div class="col-6 text-center">
+          <input type="checkbox"(change)="dochange($event)">
+          <h6><small>please tick the checkbox.<br>(if local Address and permanent Address is same)</small></h6>
+          <div formGroupName="permanentAddress">
+            <h5 class="text-primary"><small>permanent Address</small></h5>
+            <!-- Step 2 content -->
+            <input type="text" class="form-control" formControlName="areaname" placeholder="Area Name">
+            <input type="text" class="form-control" formControlName="cityname" placeholder="CityName">
+            <input type="text" class="form-control" formControlName="district" placeholder="District">
+            <input type="text" class="form-control" formControlName="state" placeholder="State">
+            <input type="text" class="form-control" formControlName="pincode" placeholder="Pincode">
+            <button class="btn btn-secondary display-flex justifycontent" (click)="prevStep()">Previous</button>&nbsp;
+          <button class="btn btn-primary" (click)="nextStep()">Next</button>
+            
+        </div>
+        </div>
+      </div>
+    
+        
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-6 text-center">
+        <div formGroupName="medicalInfo">
+          <div *ngIf="currentStep === 3">
+            <!-- Step 1 content -->
+            <h4 class="text-primary text-center text-decoration-underline">Medical Info</h4>
+            
+            <!-- Your form fields for step 1 go here -->
+            
+            <input type="text" class="form-control" formControlName="patientId" placeholder="Enter patient Id">
+            <input type="text" class="form-control" formControlName="billingDate" placeholder="Enter billing Date">
+            <input type="text" class="form-control" formControlName="treatment" placeholder="Enter treatment">
+          </div>
+          </div>
+          </div>
+          </div>
+          <div class="col-6 text-center">
+          <div formGroupName="accountDetails">
+            
+            <div *ngIf="currentStep === 3">
+            
+            <h4 class="text-primary text-center text-decoration-underline">Account Details</h4>
+            
+              
+            <!-- Your form fields for step 1 go here -->
+            <input type="text" class="form-control" formControlName="accountType" placeholder="Account type">
+            <input type="text" class="form-control" formControlName="accountBalance" placeholder="Account Balance">
+            <input type="text" class="form-control" formControlName="accountHolderName" placeholder="Account HolderName">
+            <input type="text" class="form-control" formControlName="accountStatus" placeholder="Account Status">
+            <input type="text" class="form-control" formControlName="accountNumber" placeholder="Account Number">
+            <button class="btn btn-secondary display-flex justifycontent" (click)="prevStep()">Previous</button>&nbsp;
+          <button class="btn btn-primary" (click)="nextStep()">Next</button> 
+          </div>
+          <!-- <button class="btn btn-secondary display-flex justifycontent" (click)="prevStep()">Previous</button>&nbsp;
+          <button class="btn btn-primary" (click)="nextStep()">Next</button> -->
+          </div>
+          
+          
+          </div>
+      
+          </div>
+          
+            
+         
+          
+          
+        
+        <div >
+        <div *ngIf="currentStep === 4">
+          <!-- Step 2 content -->
+          
+          <input type="file" placeholder="panCard" (change)="onSelectpanCard($event)">
+          <input type="file" placeholder="adharCard" (change)="onSelectadharCard($event)">
+          <input type="file" placeholder="photo" (change)="onSelectphoto($event)">
+          <input type="file" placeholder="signature" (change)="onSelectsignature($event)">
+          
+          <!-- Your form fields for step 2 go here -->
+          <button class="btn btn-secondary" (click)="prevStep()">Previous</button>&nbsp;
+          <!-- <button class="btn btn-success" (click)="submitForm()">Submit</button> -->
+          <button class="btn btn-primary login_btn" type="submit"> Submit</button>
+        </div>
+        
+        
+      </div>
+  </div>
+    </form>
+  </div>
 
