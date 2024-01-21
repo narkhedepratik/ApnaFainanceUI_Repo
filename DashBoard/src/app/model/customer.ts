@@ -5,13 +5,13 @@ import { CustomerAddress } from "./customer-address";
 import { MedicalInfo } from "./medical-info";
 
 export class Customer {
-    customerID:number;
-    customeName:string;
+    customerId:number;
+    customerName:string;
     customerDateOfBirth:string;
     customerAge:number;
     customerGender:string;
     customerEmail:string;
-    customerMobileNo:any;
+    customerMobileNumber:any;
     
     CustomerDocuments:CustomerDocuments;
     customerAddress:CustomerAddress;

@@ -28,7 +28,7 @@
           <input type="text" class="form-control" formControlName="customerAge" placeholder="Enter Age">
           <input type="text" class="form-control" formControlName="customerGender" placeholder="Enter Gender">
           <input type="emailId" class="form-control" formControlName="customerEmail" placeholder="Enter Email Id">
-          <input type="text" class="form-control" formControlName="customerMobileNo" placeholder="Enter Mobile Number">
+          <input type="text" class="form-control" formControlName="customerMobileNumber" placeholder="Enter Mobile Number">
           
           <button class="btn btn-primary" (click)="nextStep()">Next</button>
         </div>
@@ -116,17 +116,12 @@
       
           </div>
           
-            
-         
-          
-          
         
-        <div formGroupName="CustomerDocumentsDetails">
         <div *ngIf="currentStep === 4">
           <!-- Step 2 content -->
           
           <input type="file" placeholder="panCard" (change)="onSelectpanCard($event)">
-          <input type="file" placeholder="adharCard" (change)="onSelectadharCard($event)">
+          <input type="file" placeholder="aadharCard" (change)="onSelectadharCard($event)">
           <input type="file" placeholder="photo" (change)="onSelectphoto($event)">
           <input type="file" placeholder="signature" (change)="onSelectsignature($event)">
           
@@ -135,7 +130,7 @@
           <!-- <button class="btn btn-success" (click)="submitForm()">Submit</button> -->
           <button class="btn btn-primary login_btn" type="submit"> Submit</button>
         </div>
-        </div>
+        
         
       </div>
   </div>

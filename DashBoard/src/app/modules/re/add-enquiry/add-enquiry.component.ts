@@ -12,7 +12,7 @@ import { CustomerserviceService } from '../../../services/customerservice.servic
 export class AddEnquiryComponent implements OnInit{
   constructor(private fb:FormBuilder,public customerService:CustomerserviceService,private router:Router){}
  
-  CustomerDocumentsDetails:FormGroup; 
+  
   customerDetails:FormGroup;
   customerAddressDetails: FormGroup;
   localAddress: FormGroup;
@@ -52,16 +52,7 @@ export class AddEnquiryComponent implements OnInit{
     permanentAddress:this.permanentAddress
   }
   )
-    /* this.CustomerDocumentsDetails=this.fb.group(
-      {
-        documentId:[],
-        panCard:[],
-        adharCard:[],
-        photo:[],
-        signature:[]
-        
-      }
-      ) */
+    
       this.medicalInfoDetails=this.fb.group({
         billId:[],
         patientId:[],
@@ -79,18 +70,16 @@ export class AddEnquiryComponent implements OnInit{
        })
     this.customerDetails=this.fb.group(
       {
-        customerID:[],
+        customerId:[],
         customerName:[],
         customerDateOfBirth:[],
         customerAge:[],
         customerGender:[],
         customerEmail:[],
-        customerMobileNo:[],
-        loanApplicationJson:[],
-        CustomerDocumentsDetails:this.CustomerDocumentsDetails,
-        customerAddressDetails:this.customerAddressDetails,
-        medicalInfoDetails:this.medicalInfoDetails,
-        /* accountDetails:this.accountDetails */
+        customerMobileNumber:[],
+        CustomerAddress:this.customerAddressDetails,
+        MedicalInfo:this.medicalInfoDetails,
+        AccountDetails:this.accountDetails
        
         
        
