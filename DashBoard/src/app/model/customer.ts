@@ -6,14 +6,16 @@ import { MedicalInfo } from "./medical-info";
 
 export class Customer {
     customerId:number;
-    customerName:string;
+
+    customeName:string;
+
     customerDateOfBirth:string;
     customerAge:number;
     customerGender:string;
     customerEmail:string;
     customerMobileNumber:any;
     
-    CustomerDocuments:CustomerDocuments;
+    customerDocuments:CustomerDocuments;
     customerAddress:CustomerAddress;
     accountDetails:AccountDetails;
     medicalInfo:MedicalInfo

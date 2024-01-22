@@ -12,12 +12,12 @@ import { CustomerserviceService } from '../../../services/customerservice.servic
 export class AddEnquiryComponent implements OnInit{
   constructor(private fb:FormBuilder,public customerService:CustomerserviceService,private router:Router){}
  
-  
+
   customerDetails:FormGroup;
-  customerAddressDetails: FormGroup;
+  customerAddress: FormGroup;
   localAddress: FormGroup;
   permanentAddress: FormGroup;
-  medicalInfoDetails: FormGroup;
+  medicalInfo: FormGroup;
   accountDetails: FormGroup;
   selectphoto:any;
   selectpanCard:any;
@@ -45,15 +45,16 @@ export class AddEnquiryComponent implements OnInit{
     state:[],
     pincode:[]
    })
-    this.customerAddressDetails=this.fb.group(
+    this.customerAddress=this.fb.group(
       {
     customerAddressId:[],
     localAddress:this.localAddress,
     permanentAddress:this.permanentAddress
   }
   )
-    
-      this.medicalInfoDetails=this.fb.group({
+
+      this.medicalInfo=this.fb.group({
+
         billId:[],
         patientId:[],
         billingDate:[],
@@ -77,10 +78,13 @@ export class AddEnquiryComponent implements OnInit{
         customerGender:[],
         customerEmail:[],
         customerMobileNumber:[],
-        CustomerAddress:this.customerAddressDetails,
-        MedicalInfo:this.medicalInfoDetails,
-        AccountDetails:this.accountDetails
-       
+
+              //property <-- :    value          
+       /*  customerDocuments:this.CustomerDocuments, */
+        customerAddress:this.customerAddress,
+        medicalInfo:this.medicalInfo,
+        accountDetails:this.accountDetails 
+
         
        
 
@@ -114,8 +118,8 @@ export class AddEnquiryComponent implements OnInit{
     var jsondata=JSON.stringify(this.customerDetails.value);
     var fdata=new FormData();
     fdata.append("photo",this.selectphoto);
-    fdata.append("pancard",this.selectpanCard);
-    fdata.append("adharCard",this.selectadharCard);
+    fdata.append("panCard",this.selectpanCard);
+    fdata.append("aadharCard",this.selectadharCard);
     fdata.append("signature",this.selectsignature);
     fdata.append("loanApplicationJson",jsondata);
     this.customerService.saveCustomerDetails(fdata).subscribe();

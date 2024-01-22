@@ -5,7 +5,6 @@ import { EmployeeService } from '../../../services/employee.service';
 import { ActivatedRoute } from '@angular/router';
 
 
-
 @Component({
   selector: 'app-add-employee',
   templateUrl: './add-employee.component.html',
@@ -24,10 +23,6 @@ export class AddEmployeeComponent implements OnInit{
         employeeName:[],
         employeeEmail:[],
         employeeProfile:[],
-
-
-      //  password:[],   
-
 
       }
     );

@@ -33,7 +33,7 @@
           <button class="btn btn-primary" (click)="nextStep()">Next</button>
         </div>
 
-        <div formGroupName="customerAddressDetails">
+        <div formGroupName="customerAddress">
         <div *ngIf="currentStep === 2">
           
           <!-- Your form fields for step 1 go here -->
@@ -77,7 +77,7 @@
         </div>
         <div class="row">
           <div class="col-6 text-center">
-        <div formGroupName="medicalInfoDetails">
+        <div formGroupName="medicalInfo">
           <div *ngIf="currentStep === 3">
             <!-- Step 1 content -->
             <h4 class="text-primary text-center text-decoration-underline">Medical Info</h4>
@@ -87,6 +87,7 @@
             <input type="text" class="form-control" formControlName="patientId" placeholder="Enter patient Id">
             <input type="text" class="form-control" formControlName="billingDate" placeholder="Enter billing Date">
             <input type="text" class="form-control" formControlName="treatment" placeholder="Enter treatment">
+          </div>
           </div>
           </div>
           </div>
@@ -117,6 +118,9 @@
           </div>
           
         
+
+        <div >
+
         <div *ngIf="currentStep === 4">
           <!-- Step 2 content -->
           
