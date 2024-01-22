@@ -1,7 +1,7 @@
 export class PermanentAddress {
-    
-    areaName:string;
-    cityName:string;
+    permanentAddressid:number;
+    areaname:string;
+    cityname:string;
     district:string;
     state:string;
     pincode:number;

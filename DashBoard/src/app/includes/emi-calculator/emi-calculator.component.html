@@ -1,0 +1,16 @@
+<div class="Loan_calculator text-center">
+    <h1>Loan Calculator</h1>
+    <p>Loan amount: &#8377;
+      <input type="number" [(ngModel)]="amount" placeholder="Amount You Need">
+    </p>
+    <p>Rate (Interest): %
+      <input step=".1" [(ngModel)]="rate" placeholder="Intrest Rate..">
+    </p>
+    <p>Months (Time):
+      <input type="number" [(ngModel)]="time" placeholder="For Months..">
+    </p>
+    <input type="button" value="Calculate" (click)="calculate()">
+    <p>Total EMI: &#8377;
+      <span style="font-weight: 20px; color:black">{{ emi }}</span>
+    </p>
+  </div>

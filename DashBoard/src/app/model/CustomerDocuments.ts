@@ -1,7 +1,7 @@
 export class CustomerDocuments {
     documentId:number;
     panCard:any;    
-    adharCard:any;
+    aadharCard:any;
     photo:any;
     signature:any;
     

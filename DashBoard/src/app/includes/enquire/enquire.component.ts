@@ -20,19 +20,15 @@ export class EnquireComponent implements OnInit{
         firstName:['', [Validators.required, Validators.minLength(2)]],
         lastName:['', [Validators.required, Validators.minLength(2)]],
         age:['', [Validators.required, Validators.min(21), Validators.max(55)]],
-        emailId:['',[Validators.required,Validators.email]],
+        email:['',[Validators.required,Validators.email]],
         mobileNo:['', [Validators.required, Validators.minLength(10), Validators.maxLength(10),Validators.pattern('^[0-9]{10}$')]],
         pancardNo: ['', [Validators.required, Validators.pattern('^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$')]],
-       
+        
 
       }
     )
   }
   
-  
-
-
-
   onEnquiry(){
 
   this.enquiryservice.saveEnquiryDetails(this.enquiryForm.value).subscribe();

@@ -10,7 +10,7 @@ import { HeaderComponent } from './templates/header/header.component';
 import { ContactComponent } from './templates/contact/contact.component';
 
 import { AppLayoutComponent } from './includes/app-layout/app-layout.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './includes/login/login.component';
 import { EmiCalculatorComponent } from './includes/emi-calculator/emi-calculator.component';
 import { AppMenuComponent } from './includes/app-menu/app-menu.component';
@@ -39,15 +39,16 @@ import { ViewEnquiryComponent } from './includes/view-enquiry/view-enquiry.compo
     FooterComponent,
     EligibilityComponent,
     EnquireComponent,
-
-    ViewEnquiryComponent,
+    ViewEnquiryComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+    
     
   ],
   providers: [],

@@ -56,16 +56,16 @@
 							</div>
 
 							<div class="formsix-e">
-								<div class="errormsg" *ngIf="enquiryForm.controls['emailId'].touched && enquiryForm.controls['emailId'].invalid">
-									<span *ngIf="enquiryForm.controls['emailId'].hasError('required')">
+								<div class="errormsg" *ngIf="enquiryForm.controls['email'].touched && enquiryForm.controls['email'].invalid">
+									<span *ngIf="enquiryForm.controls['email'].hasError('required')">
 										*Email id is required.
 									</span>
-									<span *ngIf="enquiryForm.controls['emailId'].hasError('email')">
+									<span *ngIf="enquiryForm.controls['email'].hasError('email')">
 										*Invalid email format.
 									 </span>
 								</div>
 								<div class="form-group i-email">
-                                 	<input type="emailId" class="form-control" formControlName="emailId" placeholder="Enter Email Id">
+                                 	<input type="email" class="form-control" formControlName="email" placeholder="Enter Email Id">
 								</div>
 							</div>
 
@@ -100,26 +100,8 @@
 								</div>
 							</div>
 
-							<!-- <div class="formsix-e">
-								<div class="form-group i-cpassword">
-									<input type="text" class="form-control" formControlName="cpassword" placeholder="Confirm password">
-								</div>
-							</div> -->
-                          <!--   <div class="formsix-e">
-								<div class="form-group i-cscore">
-									<input type="text" class="form-control" formControlName="cibilScore" placeholder="Enter Cibil Score">
-								</div>
-							</div>
-                            <div class="formsix-e">
-								<div class="form-group i-cdate">
-									<input type="text" class="form-control" formControlName="cibilScoreDateTime" placeholder="Enter cibilScoreDateTime">
-								</div>
-							</div>
-                            <div class="formsix-e">
-								<div class="form-group i-cstatus">
-									<input type="text" class="form-control" formControlName="status" placeholder="Enter cibil status">
-								</div>
-							</div> -->
+
+
 
 							
 							<div class="text-center login_btn_wrapper">

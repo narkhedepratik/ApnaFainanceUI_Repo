@@ -20,7 +20,7 @@ export class AddEnquiryComponent implements OnInit{
 
   constructor(private fb:FormBuilder,public customerService:CustomerserviceService,private router:Router){}
  
-  CustomerDocuments:FormGroup; 
+
   customerDetails:FormGroup;
   customerAddress: FormGroup;
   localAddress: FormGroup;
@@ -62,6 +62,7 @@ export class AddEnquiryComponent implements OnInit{
   )
 
       this.medicalInfo=this.fb.group({
+
         billId:[],
         patientId:[],
         billingDate:[],
@@ -86,10 +87,11 @@ export class AddEnquiryComponent implements OnInit{
         customerEmail:[],
         customerMobileNumber:[],
 
+
         customerAddress:this.customerAddress,
         medicalInfo:this.medicalInfo,
         accountDetails:this.accountDetails 
-       
+
         
 
 
